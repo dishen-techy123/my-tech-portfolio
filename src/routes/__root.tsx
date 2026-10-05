@@ -126,12 +126,12 @@ function RootShell({ children }: { children: ReactNode }) {
 }
 
 const NAV_LINKS = [
-  { label: "About", to: "/about" },
-  { label: "Education", to: "/education" },
-  { label: "Skills", to: "/skills" },
-  { label: "Projects", to: "/projects" },
-  { label: "Certs", to: "/certifications" },
-  { label: "Contact", to: "/contact" },
+  { label: "About", to: "#about" },
+  { label: "Education", to: "#education" },
+  { label: "Skills", to: "#skills" },
+  { label: "Projects", to: "#projects" },
+  { label: "Certs", to: "#certifications" },
+  { label: "Contact", to: "#contact" },
 ];
 
 function RootComponent() {
@@ -150,19 +150,18 @@ function RootComponent() {
         {/* Header */}
         <header className="sticky top-0 z-50 border-b border-white/5 bg-background/70 backdrop-blur-xl">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-            <Link to="/" className="font-mono text-sm font-medium text-white">
+            <a href="#home" className="font-mono text-sm font-medium text-white">
               Dishen Hada<span className="text-brand"></span>
-            </Link>
+            </a>
             <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
               {NAV_LINKS.map((link) => (
-                <Link
+                <a
                   key={link.to}
-                  to={link.to}
-                  activeProps={{ className: "text-foreground" }}
-                  inactiveProps={{ className: "transition-colors hover:text-foreground" }}
+                  href={link.to}
+                  className="transition-colors hover:text-foreground"
                 >
                   {link.label}
-                </Link>
+                </a>
               ))}
             </nav>
             <SocialIcons />
