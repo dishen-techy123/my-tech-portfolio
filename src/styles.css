@@ -104,3 +104,5 @@
   opacity: 1;
   transform: none;
 }
+
+html { scroll-behavior: smooth; }
