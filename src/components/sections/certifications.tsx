@@ -1,26 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Award } from "lucide-react";
-import { useRevealOnScroll } from "@/components/site";
 
-export const Route = createFileRoute("/certifications")({
-  head: () => ({
-    meta: [
-      { title: "Certifications — Dishen Hada" },
-      {
-        name: "description",
-        content: "Certifications earned by Dishen Hada — cloud, front-end and algorithms.",
-      },
-      { property: "og:title", content: "Certifications — Dishen Hada" },
-      {
-        property: "og:description",
-        content: "Certifications earned by Dishen Hada — cloud, front-end and algorithms.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: CertificationsPage,
-});
 
 const CERTIFICATIONS = [
   { title: "AWS Cloud Practitioner", issuer: "Amazon · 2024" },
@@ -28,11 +7,9 @@ const CERTIFICATIONS = [
   { title: "Data Structures & Algorithms", issuer: "NPTEL · 2022" },
 ];
 
-function CertificationsPage() {
-  useRevealOnScroll();
-
+export function CertificationsPage() {
   return (
-    <section className="py-20">
+    <section id="certifications" className="scroll-mt-20 py-20">
       <p className="reveal font-mono text-xs uppercase tracking-[0.3em] text-brand/70">
         05 — Certifications
       </p>

@@ -1,27 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useRevealOnScroll } from "@/components/site";
 import projectDashboard from "@/assets/project-dashboard.jpg";
 import projectNotes from "@/assets/project-notes.jpg";
 
-export const Route = createFileRoute("/projects")({
-  head: () => ({
-    meta: [
-      { title: "Projects — Dishen Hada" },
-      {
-        name: "description",
-        content: "Projects by Dishen Hada — interfaces and systems built with care.",
-      },
-      { property: "og:title", content: "Projects — Dishen Hada" },
-      {
-        property: "og:description",
-        content: "Projects by Dishen Hada — interfaces and systems built with care.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: ProjectsPage,
-});
 
 const PROJECTS = [
   {
@@ -42,11 +21,9 @@ const PROJECTS = [
   },
 ];
 
-function ProjectsPage() {
-  useRevealOnScroll();
-
+export function ProjectsPage() {
   return (
-    <section className="py-20">
+    <section id="projects" className="scroll-mt-20 py-20">
       <p className="reveal font-mono text-xs uppercase tracking-[0.3em] text-brand/70">
         04 — Projects
       </p>
