@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SocialIcons } from "@/components/site";
 
 function NotFoundComponent() {
   return (
@@ -91,7 +92,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
@@ -125,13 +125,65 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+const NAV_LINKS = [
+  { label: "About", to: "/about" },
+  { label: "Education", to: "/education" },
+  { label: "Skills", to: "/skills" },
+  { label: "Projects", to: "/projects" },
+  { label: "Certs", to: "/certifications" },
+  { label: "Contact", to: "/contact" },
+];
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <div className="min-h-screen bg-background font-sans text-foreground antialiased">
+        {/* Ambient glow blobs */}
+        <div className="pointer-events-none fixed inset-0 overflow-hidden">
+          <div className="absolute -top-40 -left-32 h-[520px] w-[520px] rounded-full bg-brand/20 blur-[130px]" />
+          <div className="absolute top-24 right-0 h-[460px] w-[460px] rounded-full bg-glow/15 blur-[140px]" />
+          <div className="absolute bottom-0 left-1/3 h-[420px] w-[420px] rounded-full bg-brand/10 blur-[150px]" />
+        </div>
+
+        {/* Header */}
+        <header className="sticky top-0 z-50 border-b border-white/5 bg-background/70 backdrop-blur-xl">
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+            <Link to="/" className="font-mono text-sm font-medium text-white">
+              Dishen Hada<span className="text-brand"></span>
+            </Link>
+            <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
+              {NAV_LINKS.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  activeProps={{ className: "text-foreground" }}
+                  inactiveProps={{ className: "transition-colors hover:text-foreground" }}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+            <SocialIcons />
+          </div>
+        </header>
+
+        <main className="relative mx-auto max-w-7xl px-6">
+          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+          <Outlet />
+        </main>
+
+        {/* Footer */}
+        <footer className="relative border-t border-white/5">
+          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 py-10 sm:flex-row">
+            <p className="font-mono text-xs text-slate-500">
+              © 2026 Dishen Hada — built with care.
+            </p>
+            <SocialIcons />
+          </div>
+        </footer>
+      </div>
     </QueryClientProvider>
   );
 }
