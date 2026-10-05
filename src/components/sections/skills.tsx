@@ -1,26 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Code2, Layers, Wrench, BookOpen } from "lucide-react";
-import { useRevealOnScroll } from "@/components/site";
 
-export const Route = createFileRoute("/skills")({
-  head: () => ({
-    meta: [
-      { title: "Skills — Dishen Hada" },
-      {
-        name: "description",
-        content: "Skills of Dishen Hada — languages, frameworks, tooling and coursework.",
-      },
-      { property: "og:title", content: "Skills — Dishen Hada" },
-      {
-        property: "og:description",
-        content: "Skills of Dishen Hada — languages, frameworks, tooling and coursework.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: SkillsPage,
-});
 
 const SKILL_GROUPS = [
   {
@@ -45,11 +24,9 @@ const SKILL_GROUPS = [
   },
 ];
 
-function SkillsPage() {
-  useRevealOnScroll();
-
+export function SkillsPage() {
   return (
-    <section className="py-20">
+    <section id="skills" className="scroll-mt-20 py-20">
       <p className="reveal font-mono text-xs uppercase tracking-[0.3em] text-brand/70">
         03 — Skills
       </p>
