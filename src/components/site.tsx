@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Github, Linkedin } from "lucide-react";
 
 export const GITHUB_URL = "https://github.com/dishen-techy123";
-export const LINKEDIN_URL = "https://linkedin.com/in/dishenhada";
+export const LINKEDIN_URL = "https://www.linkedin.com/in/dishen-hada-04778142b/";
 
 export function useRevealOnScroll() {
   useEffect(() => {
