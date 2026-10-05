@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { Github, Linkedin, Award, Code2, Layers, Wrench } from "lucide-react";
+import { Github, Linkedin, Award, Code2, Layers, Wrench, BookOpen } from "lucide-react";
 import projectDashboard from "@/assets/project-dashboard.jpg";
 import projectNotes from "@/assets/project-notes.jpg";
 
@@ -42,17 +42,22 @@ const SKILL_GROUPS = [
   {
     title: "Languages",
     icon: Code2,
-    items: ["Python", "JavaScript", "TypeScript", "C++"],
+    items: ["Python", "JavaScript", "TypeScript", "C++", "C Programming"],
   },
   {
     title: "Frameworks",
     icon: Layers,
-    items: ["React", "Next.js", "Node / Express", "Tailwind"],
+    items: ["React", "Next.js", "Node / Express", "Tailwind", "Web Development"],
   },
   {
     title: "Tooling",
     icon: Wrench,
     items: ["Git / GitHub", "PostgreSQL", "Docker", "Figma"],
+  },
+  {
+    title: "Core Coursework",
+    icon: BookOpen,
+    items: ["Data Structures", "Calculus"],
   },
 ];
 
@@ -141,7 +146,7 @@ function Index() {
       <header className="sticky top-0 z-50 border-b border-white/5 bg-background/70 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <a href="#" className="font-mono text-sm font-medium text-white">
-            Dishen<span className="text-brand">.</span>dev
+            Dishen Hada<span className="text-brand">.</span>
           </a>
           <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
             {NAV_LINKS.map((link) => (
@@ -220,12 +225,12 @@ function Index() {
             <div className="reveal rounded-xl bg-white/5 p-6 ring-1 ring-white/10">
               <div className="flex items-baseline justify-between">
                 <h3 className="text-lg font-medium text-white">
-                  B.Tech, Computer Science
+                  B.Tech, Computer Science and Engineering
                 </h3>
                 <span className="font-mono text-xs text-slate-500">2022 — 2026</span>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                Your University Name · CGPA 9.1
+                Undergraduate at JECRC
               </p>
             </div>
             <div className="reveal rounded-xl bg-white/5 p-6 ring-1 ring-white/10">
@@ -247,7 +252,7 @@ function Index() {
           <p className="reveal font-mono text-xs uppercase tracking-[0.3em] text-brand/70">
             03 — Skills
           </p>
-          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {SKILL_GROUPS.map((group) => (
               <div
                 key={group.title}
