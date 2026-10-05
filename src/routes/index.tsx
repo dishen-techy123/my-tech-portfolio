@@ -4,7 +4,7 @@ import { Github, Linkedin, Award, Code2, Layers, Wrench, BookOpen } from "lucide
 import projectDashboard from "@/assets/project-dashboard.jpg";
 import projectNotes from "@/assets/project-notes.jpg";
 
-const GITHUB_URL = "https://github.com/dishenhada";
+const GITHUB_URL = "https://github.com/dishen-techy123";
 const LINKEDIN_URL = "https://linkedin.com/in/dishenhada";
 
 export const Route = createFileRoute("/")({
