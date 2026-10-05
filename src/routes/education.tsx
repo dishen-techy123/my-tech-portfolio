@@ -35,7 +35,7 @@ function EducationPage() {
             <h1 className="text-lg font-medium text-white">
               B.Tech, Computer Science and Engineering
             </h1>
-            <span className="font-mono text-xs text-slate-500">2022 — 2026</span>
+            <span className="font-mono text-xs text-slate-500">2026 — 2030</span>
           </div>
           <p className="mt-2 text-sm text-muted-foreground">
             Undergraduate at JECRC
@@ -46,10 +46,10 @@ function EducationPage() {
             <h2 className="text-lg font-medium text-white">
               Higher Secondary, PCM + CS
             </h2>
-            <span className="font-mono text-xs text-slate-500">2020 — 2022</span>
+            <span className="font-mono text-xs text-slate-500">2024 — 2026</span>
           </div>
           <p className="mt-2 text-sm text-muted-foreground">
-            Your School Name · 94%
+            Scotle High School · 94%
           </p>
         </div>
       </div>
