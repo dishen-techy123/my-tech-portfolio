@@ -248,12 +248,10 @@ function Index() {
             03 — Skills
           </p>
           <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
-            {SKILL_GROUPS.map((group, i) => (
+            {SKILL_GROUPS.map((group) => (
               <div
                 key={group.title}
-                className={`reveal rounded-xl bg-white/5 p-6 ring-1 ring-white/10 ${
-                  ["", "", ""].length > i ? "" : ""
-                }`}
+                className="reveal rounded-xl bg-white/5 p-6 ring-1 ring-white/10"
               >
                 <div className="flex items-center gap-2">
                   <group.icon size={16} className="text-brand" />
