@@ -46,12 +46,19 @@ function Index() {
           I'm Dishen Hada — a B.Tech CS student focused on clean interfaces and
           reliable systems. I care about the details most people never notice.
         </p>
-        <div className="reveal mt-9 flex items-center gap-4">
+        <div className="reveal mt-9 flex flex-wrap items-center gap-4">
           <a
             href="#projects"
             className="rounded-lg bg-brand px-5 py-2.5 text-sm font-medium text-brand-foreground ring-1 ring-brand/40 transition-colors hover:bg-white"
           >
             View my work
+          </a>
+          <a
+            href="/Dishen-Hada-Resume.pdf"
+            download="Dishen-Hada-Resume.pdf"
+            className="rounded-lg px-5 py-2.5 text-sm font-medium text-muted-foreground ring-1 ring-white/15 transition-colors hover:bg-white/5"
+          >
+            Download résumé
           </a>
           <a
             href="#contact"

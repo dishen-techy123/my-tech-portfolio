@@ -18,6 +18,13 @@ export function ContactPage() {
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <a
+            href="/Dishen-Hada-Resume.pdf"
+            download="Dishen-Hada-Resume.pdf"
+            className="rounded-lg px-5 py-2.5 text-sm font-medium text-muted-foreground ring-1 ring-white/15 transition-colors hover:bg-white/5"
+          >
+            Download résumé
+          </a>
+          <a
             href="mailto:dishen@example.com"
             className="rounded-lg bg-brand px-5 py-2.5 text-sm font-medium text-brand-foreground ring-1 ring-brand/40 transition-colors hover:bg-white"
           >
