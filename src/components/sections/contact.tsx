@@ -28,7 +28,7 @@ export function ContactPage() {
             href="mailto:dishen@example.com"
             className="rounded-lg bg-brand px-5 py-2.5 text-sm font-medium text-brand-foreground ring-1 ring-brand/40 transition-colors hover:bg-white"
           >
-            dishen@example.com
+            dishen.26bcon2207@jecrcu.edu.in
           </a>
           <div className="flex items-center gap-3">
             <a
