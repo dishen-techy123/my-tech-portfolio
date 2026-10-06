@@ -104,6 +104,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
+    scripts: [
+      {
+        src: "https://cdn.botpress.cloud/webchat/v5.0/inject.js",
+        async: true,
+      },
+      {
+        src: "https://files.bpcontent.cloud/2026/10/06/10/20261006105448-ECDBRFDT.js",
+        defer: true,
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -169,7 +179,6 @@ function RootComponent() {
         </header>
 
         <main className="relative mx-auto max-w-7xl px-6">
-          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
           <Outlet />
         </main>
 
