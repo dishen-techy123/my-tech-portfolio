@@ -104,16 +104,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
-    scripts: [
-      {
-        src: "https://cdn.botpress.cloud/webchat/v5.0/inject.js",
-        async: true,
-      },
-      {
-        src: "https://files.bpcontent.cloud/2026/10/06/10/20261006105448-ECDBRFDT.js",
-        defer: true,
-      },
-    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -146,6 +136,23 @@ const NAV_LINKS = [
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  useEffect(() => {
+    // Inject Botpress Base Library
+    const injectScript = document.createElement("script");
+    injectScript.src = "https://cdn.botpress.cloud/webchat/v5.0/inject.js";
+    injectScript.async = true;
+
+    // Inject Specific Bot Config Script after base library loads
+    injectScript.onload = () => {
+      const botScript = document.createElement("script");
+      botScript.src = "https://files.bpcontent.cloud/2026/10/06/10/20261006105448-ECDBRFDT.js";
+      botScript.defer = true;
+      document.body.appendChild(botScript);
+    };
+
+    document.body.appendChild(injectScript);
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
